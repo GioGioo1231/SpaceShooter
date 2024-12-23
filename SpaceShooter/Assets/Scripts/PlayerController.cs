@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour
 
         if (hp <= 0)
         {
-            Debug.Log("Player nie zyje");
+            Debug.Log("Koniec Gry");
+            Application.Quit();
         }
     }
 
@@ -79,6 +80,8 @@ public class PlayerController : MonoBehaviour
 
     public void HittedByBullet() 
     {
+        GameManager.uiManager.DisableHpSprite(hp);
+    
         hp = hp - 1;
         Debug.Log("Trafiono");
     }
